@@ -1,0 +1,85 @@
+
+R version 3.5.3 (2019-03-11) -- "Great Truth"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> getwd()
+[1] "C:/Users/khodaei.m/Documents"
+> getwd()
+[1] "C:/Users/khodaei.m/Desktop/maria/data mining/data mining coursera"
+> setwd("C:/Users/khodaei.m/Desktop/maria/data mining/data mining coursera")
+> plotData<- read.table("C:/Users/khodaei.m/Desktop/maria/data mining/data mining coursera/household_power_consumption.txt", header=T, sep=";", na.strings="?")
+> finalData<-plotData[plotData$Date %in% c("1/2/2007", "2/2/2007"),]
+> setTime<- strptime(paste(finalData$Date, finalData$Time, sep=" "), "%d%m%Y%H:%M:%S")
+> finalData<- cbind(setTime, finalData)
+> hist(finalData$Global_active_power, col="red", main="Global Active Power")
+> hist(finalData$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+> 
+> 
+> hist(finalData$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+> 
+> data<-read.table("C:/Users/khodaei.m/Desktop/maria/data mining/data mining coursera/household_power_consumption.txt", header=T, sep=";", na.strings="?")
+> data2<-data[data$Date %in% c("1/2/2007", "2/2/2007"),]
+> hist(data2$Global_active_power, col="red", main="Global Active Power")
+> hist(data2$Global_active_power, col="red", main="Global Active Power")
+> hist(data2$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+> plot(finalData$setTime, finalData$Global_active_power, type="l", col="black", xlab="", ylab="Global Active Power (kilowatts)")
+Error in plot.window(...) : need finite 'xlim' values
+In addition: Warning messages:
+1: In min(x) : no non-missing arguments to min; returning Inf
+2: In max(x) : no non-missing arguments to max; returning -Inf
+> data3<-as.Date(data2, "%a%b%Y")
+Error in as.Date.default(data2, "%a%b%Y") : 
+  do not know how to convert 'data2' to class “Date”
+> data<-as.Date(data2, "%a%b%Y")
+Error in as.Date.default(data2, "%a%b%Y") : 
+  do not know how to convert 'data2' to class “Date”
+> data3<-as.Date(data,"%a%b%Y")
+Error in as.Date.default(data, "%a%b%Y") : 
+  do not know how to convert 'data' to class “Date”
+>  data<-read.table("C:/Users/khodaei.m/Desktop/maria/data mining/data mining coursera/household_power_consumption.txt", header=T, sep=";", na.strings="?")
+> data3<-as.Date(data,"%a%b%Y")
+Error in as.Date.default(data, "%a%b%Y") : 
+  do not know how to convert 'data' to class “Date”
+> data3<-as.Date(data$Date, "%a%b%Y")
+> head(data3, n=6)
+[1] NA NA NA NA NA NA
+> data$Date <- as.Date(data$Date, "%d/%m/%Y")
+>  data2<-data[data$Date %in% c("1/2/2007", "2/2/2007"),]
+> plot(data$Date, data$Global_active_power, type="l", col="black", xlab="", ylab="Global Active Power (kilowatts)")
+> data3<-strptime(paste(data2$Date, data2$Time, sep=" "), "%d%m%Y %H:%M:%S")
+> data4<-cbind(data2, data3)
+> plot(data4$data3, data4$Global_active_power, type="1",col="black", xlab="", ylab="Global Active Power (kilowatts)")
+Error in plot.window(...) : need finite 'xlim' values
+In addition: Warning messages:
+1: In min(x) : no non-missing arguments to min; returning Inf
+2: In max(x) : no non-missing arguments to max; returning -Inf
+3: In min(x) : no non-missing arguments to min; returning Inf
+4: In max(x) : no non-missing arguments to max; returning -Inf
+> finalData <- plotData[plotData$Date %in% c("1/2/2007","2/2/2007"),]
+> SetTime <-strptime(paste(finalData$Date, finalData$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
+> finalData <- cbind(SetTime, finalData)
+> plot(finalData$SetTime, finalData$Global_active_power, type="l", col="black", xlab="", ylab="Global Active Power (kilowatts)")
+> columnlines <- c("black", "red", "blue")
+> labels <- c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
+> plot(finalData$SetTime, finalData$Sub_metering_1, type="l", col=columnlines[1], xlab="", ylab="Energy sub metering")
+> lines(finalData$SetTime, finalData$Sub_metering_2, col=columnlines[2])
+> lines(finalData$SetTime, finalData$Sub_metering_3, col=columnlines[3])
+> legend("topright", legend=labels, col=columnlines, lty="solid")
+> 
